@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CommandManager : MonoBehaviour
 {
-    public event EventHandler<AbilityCheckArgs> AbilityCheck;
+    public event EventHandler<AbilityCheckArgs> AbilityCheck; 
 
     [SerializeField]
     private InputManager _inputManager;
@@ -15,6 +15,7 @@ public class CommandManager : MonoBehaviour
     private void OnEnable()
     {
         _inputManager.AbilitySelected += InputManager_AbilitySelected;
+        // _combatManager.
 
     }
     private void OnDisable()
@@ -29,14 +30,14 @@ public class CommandManager : MonoBehaviour
         // de séléctionner une abilité ?
         // EXEMPLE : if (_cycleManager.GameMode.AbilitySelection)
         // [...]
-
+        AbilityCheckArgs args = new AbilityCheckArgs();       
 
     }
 
 }
 
 public class AbilityCheckArgs
-{
-
+{    
 
 }
+

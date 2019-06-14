@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public event EventHandler<AbilitySelectedArgs> AbilitySelected;
+    private Vector2 Mouvement;
 
     private void OnEnable()
     {
@@ -19,7 +20,7 @@ public class InputManager : MonoBehaviour
 
     private void UIManager_AbilitiesCreated(object sender, AbilitiesCreatedArgs e)
     {
-        foreach (Ability ability in e.Abilities)
+        foreach (ActiveAbility ability in e.Abilities)
         {
             ability.Click += Ability_Click;
         }
@@ -28,26 +29,14 @@ public class InputManager : MonoBehaviour
     private void Ability_Click(object sender, ClickArgs e)
     {
         // L'abilité sur laquelle on a cliqué
-        Ability ability = (Ability)sender;
+        ActiveAbility ability = (ActiveAbility)sender;
 
         OnAbilitySelected(ability);
     }
 
-    private void OnAbilitySelected(Ability ability)
+    private void OnAbilitySelected(ActiveAbility ability)
     {
         AbilitySelected?.Invoke(this, new AbilitySelectedArgs(ability));
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     [SerializeField]
@@ -56,14 +45,14 @@ public class InputManager : MonoBehaviour
 
 public class AbilitySelectedArgs
 {
-    public AbilitySelectedArgs(Ability ability)
+    public AbilitySelectedArgs(ActiveAbility ability)
     {
         this._ability = ability;
     }
 
-    private Ability _ability;
+    private ActiveAbility _ability;
 
-    public Ability Ability
+    public ActiveAbility Ability
     {
         get { return _ability; }
     }
