@@ -5,28 +5,15 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {   
-
     public event EventHandler<AbilitiesCreatedArgs> AbilitiesCreated;
     public event EventHandler<PlayerTurnStartedArgs> PlayerTurnStarted;
-
+    
 
     private void Awake()
     {
-        activeAbilities = transform.GetComponentsInChildren<ActiveAbility>();
-        passiveAbilities = transform.GetComponentsInChildren<PassiveAbility>();
-        infoPanel = transform.GetComponentInChildren<AbilityInfoPanel>(true);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        activeAbilities = GetComponentsInChildren<ActiveAbility>();
+        passiveAbilities = GetComponentsInChildren<PassiveAbility>();
+        infoPanel = GetComponentInChildren<AbilityInfoPanel>(true);
     }
 
     private void OnEnable()
