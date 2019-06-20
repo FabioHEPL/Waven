@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public partial class InputManager : MonoBehaviour
 {
-    public event EventHandler<ActiveAbilitySelectedArgs> ActiveAbilitySelected;
+
     public event EventHandler<PassiveAbilitySelectedArgs> PassiveAbilitySelected;
     public event EventHandler<MouvementModeArgs> MouvementMode;
     public event EventHandler<SwitchTurnArgs> SwitchTurn;
@@ -16,24 +16,9 @@ public class InputManager : MonoBehaviour
 
     public class PassiveAbilitySelectedArgs
     {
+
     }
 
-    public class ActiveAbilitySelectedArgs
-    {
-        private int _abilityId;
-
-        public int AbilityId
-        {
-            get { return _abilityId; }
-            set { _abilityId = value; }
-        }
-
-
-        public ActiveAbilitySelectedArgs(int abilityId)
-        {
-            this._abilityId = abilityId;
-        }
-    }
 
     public class SwitchTurnArgs
     {
@@ -52,7 +37,8 @@ public class InputManager : MonoBehaviour
         {
             case "active-ability":
                 int abilityNumber = clicked.transform.GetSiblingIndex()+1;
-                ActiveAbilitySelected?.Invoke(this, new ActiveAbilitySelectedArgs(abilityNumber));
+                OnActiveAbilitySelected(abilityNumber);               
+
                 Debug.Log(String.Format("Active ability selected {0}", abilityNumber));
                 break;
             case "passive-ability":
@@ -62,13 +48,9 @@ public class InputManager : MonoBehaviour
             case "mouvement-button":
                 MouvementMode?.Invoke(this, new MouvementModeArgs());
                 break;
-
             case "switch-turn-button":
                 SwitchTurn?.Invoke(this, new SwitchTurnArgs());
-
-
                 break;
-
             default:
                 throw new Exception("Le bouton de l'UI sur lequel on a cliqué n'a pas de tag valide.");
                 //break;
@@ -83,39 +65,21 @@ public class InputManager : MonoBehaviour
 
     private Vector2 Mouvement;
 
-    private void Awake()
-    {
-
-    }
-
-    private void OnEnable()
-    {
-        _uiManager.AbilitiesCreated += UIManager_AbilitiesCreated;
-        _movementButton.Clicked += MovementButton_Clicked;
-        _switchTurnButton.Clicked += SwitchTurnButton_Clicked;
-
-        _uiManager.Clicked += UIManager_Clicked;
-    }
 
 
 
-    private void SwitchTurnButton_Clicked(object sender, SwitchTurnButton.ClickedArgs e)
-    {
-        SwitchTurnRequest?.Invoke(this, new SwitchTurnRequestArgs());
-        Debug.Log("Switch turn !");
-    }
 
-    private void MovementButton_Clicked(object sender, MovementButton.ClickedArgs e)
-    {
-        _movementMode = true;
-    }
+    //private void SwitchTurnButton_Clicked(object sender, SwitchTurnButton.ClickedArgs e)
+    //{
+    //    SwitchTurnRequest?.Invoke(this, new SwitchTurnRequestArgs());
+    //    Debug.Log("Switch turn !");
+    //}
 
-    private void OnDisable()
-    {
-        _uiManager.AbilitiesCreated -= UIManager_AbilitiesCreated;
-        _movementButton.Clicked -= MovementButton_Clicked;
-        _switchTurnButton.Clicked -= SwitchTurnButton_Clicked;
-    }
+    //private void MovementButton_Clicked(object sender, MovementButton.ClickedArgs e)
+    //{
+    //    _movementMode = true;
+    //}
+
 
     private void Update()
     {
@@ -160,11 +124,11 @@ public class InputManager : MonoBehaviour
         AbilitySelected?.Invoke(this, new AbilitySelectedArgs(ability));
     }
 
-    [SerializeField]
-    private MovementButton _movementButton;
+    //[SerializeField]
+    //private MovementButton _movementButton;
 
-    [SerializeField]
-    private SwitchTurnButton _switchTurnButton;
+    //[SerializeField]
+    //private SwitchTurnButton _switchTurnButton;
 
 
     [SerializeField]

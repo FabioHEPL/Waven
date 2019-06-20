@@ -10,6 +10,7 @@ TagManager:
   - mouvement-button
   - switch-turn-button
   - active-ability
+  - ability-zone
   layers:
   - Default
   - TransparentFX
