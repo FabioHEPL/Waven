@@ -2,9 +2,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UIManager : MonoBehaviour
-{   
+public class UIManager : MonoBehaviour, IPointerClickHandler
+{
+    // CLICK HANDLER
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        OnClicked(eventData.pointerEnter.gameObject);
+    }
+
+    private void OnClicked(GameObject clicked)
+    {
+        Clicked?.Invoke(this, new ClickedArgs(clicked));
+    }
+
+    public event EventHandler<ClickedArgs> Clicked;
+
+    public class ClickedArgs
+    {
+        private GameObject _clicked;
+
+        public GameObject Clicked
+        {
+            get { return _clicked; }
+            set { _clicked = value; }
+        }
+
+
+        public ClickedArgs(GameObject clicked)
+        {
+            _clicked = clicked;
+        }
+
+    }
+
+
+
+
     public event EventHandler<AbilitiesCreatedArgs> AbilitiesCreated;
     public event EventHandler<PlayerTurnStartedArgs> PlayerTurnStarted;
     
@@ -90,9 +126,12 @@ public class UIManager : MonoBehaviour
 
     }
 
+
     private PassiveAbility[] passiveAbilities;
     private ActiveAbility[] activeAbilities;
     private AbilityInfoPanel infoPanel;
+
+
 }
 
 public class PlayerTurnStartedArgs

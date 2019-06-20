@@ -5,9 +5,79 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public event EventHandler<ActiveAbilitySelectedArgs> ActiveAbilitySelected;
+    public event EventHandler<PassiveAbilitySelectedArgs> PassiveAbilitySelected;
+    public event EventHandler<MouvementModeArgs> MouvementMode;
+    public event EventHandler<SwitchTurnArgs> SwitchTurn;
+
+    public class MouvementModeArgs
+    {
+    }
+
+    public class PassiveAbilitySelectedArgs
+    {
+    }
+
+    public class ActiveAbilitySelectedArgs
+    {
+        private int _abilityId;
+
+        public int AbilityId
+        {
+            get { return _abilityId; }
+            set { _abilityId = value; }
+        }
+
+
+        public ActiveAbilitySelectedArgs(int abilityId)
+        {
+            this._abilityId = abilityId;
+        }
+    }
+
+    public class SwitchTurnArgs
+    {
+        
+    }
+
+
+    private void UIManager_Clicked(object sender, UIManager.ClickedArgs e)
+    {
+        HandleClick(e.Clicked);
+    }
+
+    private void HandleClick(GameObject clicked)
+    {
+        switch (clicked.tag)
+        {
+            case "active-ability":
+                int abilityNumber = clicked.transform.GetSiblingIndex()+1;
+                ActiveAbilitySelected?.Invoke(this, new ActiveAbilitySelectedArgs(abilityNumber));
+                Debug.Log(String.Format("Active ability selected {0}", abilityNumber));
+                break;
+            case "passive-ability":
+                // event
+                PassiveAbilitySelected?.Invoke(this, new PassiveAbilitySelectedArgs());
+                break;
+            case "mouvement-button":
+                MouvementMode?.Invoke(this, new MouvementModeArgs());
+                break;
+
+            case "switch-turn-button":
+                SwitchTurn?.Invoke(this, new SwitchTurnArgs());
+
+
+                break;
+
+            default:
+                throw new Exception("Le bouton de l'UI sur lequel on a cliqué n'a pas de tag valide.");
+                //break;
+        }
+    }
+
     public event EventHandler<AbilitySelectedArgs> AbilitySelected;
     public event EventHandler<MouvementRequestArgs> MovementRequest;
-    public event EventHandler<SwitchTurnRequestArgs> SwitchTurnRequest; 
+    public event EventHandler<SwitchTurnRequestArgs> SwitchTurnRequest;
 
     public bool _movementMode = false;
 
@@ -15,7 +85,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-       
+
     }
 
     private void OnEnable()
@@ -23,7 +93,11 @@ public class InputManager : MonoBehaviour
         _uiManager.AbilitiesCreated += UIManager_AbilitiesCreated;
         _movementButton.Clicked += MovementButton_Clicked;
         _switchTurnButton.Clicked += SwitchTurnButton_Clicked;
+
+        _uiManager.Clicked += UIManager_Clicked;
     }
+
+
 
     private void SwitchTurnButton_Clicked(object sender, SwitchTurnButton.ClickedArgs e)
     {
@@ -61,7 +135,7 @@ public class InputManager : MonoBehaviour
 
             MovementRequest?.Invoke(this, new MouvementRequestArgs((Vector2)movement));
             _movementMode = false;
-            
+
         }
     }
 
@@ -95,6 +169,8 @@ public class InputManager : MonoBehaviour
 
     [SerializeField]
     private UIManager _uiManager;
+
+
 }
 
 public class SwitchTurnRequestArgs

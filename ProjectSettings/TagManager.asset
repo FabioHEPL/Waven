@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ui
+  - abilities-panel
+  - passive-ability
+  - mouvement-button
+  - switch-turn-button
+  - active-ability
   layers:
   - Default
   - TransparentFX
