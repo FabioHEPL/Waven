@@ -57,13 +57,16 @@ public partial class InputManager : MonoBehaviour
         }
     }
 
-    public event EventHandler<AbilitySelectedArgs> AbilitySelected;
-    public event EventHandler<MouvementRequestArgs> MovementRequest;
-    public event EventHandler<SwitchTurnRequestArgs> SwitchTurnRequest;
 
-    public bool _movementMode = false;
 
-    private Vector2 Mouvement;
+
+    //public event EventHandler<AbilitySelectedArgs> AbilitySelected;
+    //public event EventHandler<MouvementRequestArgs> MovementRequest;
+    //public event EventHandler<SwitchTurnRequestArgs> SwitchTurnRequest;
+
+    //public bool _movementMode = false;
+
+    //private Vector2 Mouvement;
 
 
 
@@ -81,93 +84,93 @@ public partial class InputManager : MonoBehaviour
     //}
 
 
-    private void Update()
-    {
-        // si on est en mode mouvement
-        if (_movementMode)
-        {
-            HandleClick();
-        }
-    }
+    //private void Update()
+    //{
+    //    // si on est en mode mouvement
+    //    if (_movementMode)
+    //    {
+    //        HandleClick();
+    //    }
+    //}
 
-    private void HandleClick()
-    {
-        // appuyer sur bouton
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 movement = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //private void HandleClick()
+    //{
+    //    // appuyer sur bouton
+    //    if (Input.GetMouseButton(0))
+    //    {
+    //        Vector3 movement = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            MovementRequest?.Invoke(this, new MouvementRequestArgs((Vector2)movement));
-            _movementMode = false;
+    //        MovementRequest?.Invoke(this, new MouvementRequestArgs((Vector2)movement));
+    //        _movementMode = false;
 
-        }
-    }
+    //    }
+    //}
 
-    private void UIManager_AbilitiesCreated(object sender, AbilitiesCreatedArgs e)
-    {
-        foreach (ActiveAbility ability in e.Abilities)
-        {
-            ability.Click += Ability_Click;
-        }
-    }
+    //private void UIManager_AbilitiesCreated(object sender, AbilitiesCreatedArgs e)
+    //{
+    //    foreach (ActiveAbility ability in e.Abilities)
+    //    {
+    //        ability.Click += Ability_Click;
+    //    }
+    //}
 
-    private void Ability_Click(object sender, ClickArgs e)
-    {
-        // L'abilité sur laquelle on a cliqué
-        ActiveAbility ability = (ActiveAbility)sender;
+    //private void Ability_Click(object sender, ClickArgs e)
+    //{
+    //    // L'abilité sur laquelle on a cliqué
+    //    ActiveAbility ability = (ActiveAbility)sender;
 
-        OnAbilitySelected(ability);
-    }
+    //    OnAbilitySelected(ability);
+    //}
 
-    private void OnAbilitySelected(ActiveAbility ability)
-    {
-        AbilitySelected?.Invoke(this, new AbilitySelectedArgs(ability));
-    }
+    //private void OnAbilitySelected(ActiveAbility ability)
+    //{
+    //    AbilitySelected?.Invoke(this, new AbilitySelectedArgs(ability));
+    //}
+
+    ////[SerializeField]
+    ////private MovementButton _movementButton;
+
+    ////[SerializeField]
+    ////private SwitchTurnButton _switchTurnButton;
+
 
     //[SerializeField]
-    //private MovementButton _movementButton;
-
-    //[SerializeField]
-    //private SwitchTurnButton _switchTurnButton;
-
-
-    [SerializeField]
-    private UIManager _uiManager;
+    //private UIManager _uiManager;
 
 
 }
 
-public class SwitchTurnRequestArgs
-{
-}
+//public class SwitchTurnRequestArgs
+//{
+//}
 
-public class MouvementRequestArgs
-{
-    public MouvementRequestArgs(Vector2 movement)
-    {
-        this._movement = movement;
-    }
+//public class MouvementRequestArgs
+//{
+//    public MouvementRequestArgs(Vector2 movement)
+//    {
+//        this._movement = movement;
+//    }
 
-    private Vector2 _movement;
-    public Vector2 Movement
-    {
-        get { return _movement; }
-        set { _movement = value; }
-    }
+//    private Vector2 _movement;
+//    public Vector2 Movement
+//    {
+//        get { return _movement; }
+//        set { _movement = value; }
+//    }
 
-}
+//}
 
-public class AbilitySelectedArgs
-{
-    public AbilitySelectedArgs(ActiveAbility ability)
-    {
-        this._ability = ability;
-    }
+//public class AbilitySelectedArgs
+//{
+//    public AbilitySelectedArgs(ActiveAbility ability)
+//    {
+//        this._ability = ability;
+//    }
 
-    private ActiveAbility _ability;
+//    private ActiveAbility _ability;
 
-    public ActiveAbility Ability
-    {
-        get { return _ability; }
-    }
-}
+//    public ActiveAbility Ability
+//    {
+//        get { return _ability; }
+//    }
+//}
