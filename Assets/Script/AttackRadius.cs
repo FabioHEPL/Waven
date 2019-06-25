@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
 public class AttackRadius : MonoBehaviour
 {
     private UICircle _circle;
@@ -26,41 +25,10 @@ public class AttackRadius : MonoBehaviour
             this.transform.position.z);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    collided.Add(collision.gameObject);
-    //    Debug.Log("On trigger enter");
-    //    //if (collision.CompareTag("Player"))
-    //    //{
-    //    //    collided.Add(collision.gameObject);
-    //    //    //public List<GameObject> TargetList;
-
-    //    //}
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    collided.Remove(collision.gameObject);
-
-    //    //if (collision.CompareTag("Player"))
-    //    //{
-    //    //    // supprimer sprite ou bouton selon type d'attaque
-    //    //    // et retirer de la liste 
-    //    //    // savoir dans quelle équipe est le joueur et 
-    //    //    // comparer l'équipe du joueur qui lance le sort
-    //    //    collided.Remove(collision.gameObject);
-
-    //    //}
-    //}
-
-
     private void OnMouseDown()
     {
-        Debug.Log("Attack area selected !");
         OnSelected();
     }
-
-
 
     private void OnSelected()
     {

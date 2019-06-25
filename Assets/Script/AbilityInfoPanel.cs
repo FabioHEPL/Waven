@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class AbilityInfoPanel : MonoBehaviour
@@ -54,86 +55,107 @@ public class AbilityInfoPanel : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        FindObjectOfType<ActiveAbility>().OnHoverEnter += OnEnterListener;
+        FindObjectOfType<ActiveAbility>().OnHoverExit += OnHoverExitListener;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnHoverExitListener(object sender, HoverExitArgs e)
     {
-        
+        this.gameObject.SetActive(false);
     }
 
-    public void DisplayRepresentation(ActiveAbility ability)
+    private void OnEnterListener(object sender, HoverEnterArgs e)
     {
-        representation.Display(ability);
+        var character = CharacterInfoUtilities.CharacterInfoUtility.GetCharacterInfo(e.Character);
+
+        this.gameObject.SetActive(true);
+        if (e.IsPassive)
+        {
+            _nameText.text = "Name: " + character.PassifName;
+            _paCostText.text = "";
+            _descriptionText.text = "Description: " + character.Passif;
+        }
+        else
+        {
+            _paCostText.text = "Cout PA: ";
+            _nameText.text = "Name: " + character.Spells[e.ButtonNR].Name;
+            _descriptionText.text ="Description: " + character.Spells[e.ButtonNR].Description;
+        }
     }
 
-    private AbilityRepresentation representation;
-
-    public  void SetRepresentation(AbilityRepresentation abilityRepresentation)
-    {
-        representation = abilityRepresentation;
-    }
-
-}
+    
 
 
-public interface AbilityRepresentation
-{
-    void Display(ActiveAbility ability);
-    //void Hide();
-}
+    //    public void DisplayRepresentation(ActiveAbility ability)
+    //    {
+    //        representation.Display(ability);
+    //    }
 
-public class PassiveAbilityRepresentation :  AbilityRepresentation
-{
-    public PassiveAbilityRepresentation(Text nameText, Text paCostText, Text descriptionText)
-    {
-        _nameText = nameText;
-        _paCostText = paCostText;
-        _descriptionText = descriptionText;
-    }
+    //    private AbilityRepresentation representation;
 
-    private Text _nameText;
-    private Text _paCostText;
-    private Text _descriptionText;
+    //    public  void SetRepresentation(AbilityRepresentation abilityRepresentation)
+    //    {
+    //        representation = abilityRepresentation;
+    //    }
 
-    public void Display(ActiveAbility ability)
-    {        
-        _nameText.text = "Name : " + ability.Name;
-        _descriptionText.text = "Description : " + ability.Description;
-        _paCostText.gameObject.SetActive(false);
-    }
-
-    public void Hide()
-    {
-        
-    }
-}
-
-public class ActiveAbilityRepresentation : AbilityRepresentation
-{
-     public ActiveAbilityRepresentation(Text nameText, Text paCostText, Text descriptionText)
-    {
-        _nameText = nameText;
-        _paCostText = paCostText;
-        _descriptionText = descriptionText;
-    }
-
-    private Text _nameText;
-    private Text _paCostText;
-    private Text _descriptionText;
+    //}
 
 
-    public void Display(ActiveAbility ability)
-    {
-        _nameText.text = "Name : " + ability.Name;
-        _descriptionText.text = "Description : " + ability.Description;
-        _paCostText.gameObject.SetActive(true);
-        _paCostText.text = "PA Cost : " + ability.PACost;
-    }
+    //public interface AbilityRepresentation
+    //{
+    //    void Display(ActiveAbility ability);
+    //    //void Hide();
+    //}
+
+    //public class PassiveAbilityRepresentation :  AbilityRepresentation
+    //{
+    //    public PassiveAbilityRepresentation(Text nameText, Text paCostText, Text descriptionText)
+    //    {
+    //        _nameText = nameText;
+    //        _paCostText = paCostText;
+    //        _descriptionText = descriptionText;
+    //    }
+
+    //    private Text _nameText;
+    //    private Text _paCostText;
+    //    private Text _descriptionText;
+
+    //    public void Display(ActiveAbility ability)
+    //    {        
+    //        _nameText.text = "Name : " + ability.Name;
+    //        _descriptionText.text = "Description : " + ability.Description;
+    //        _paCostText.gameObject.SetActive(false);
+    //    }
+
+    //    public void Hide()
+    //    {
+
+    //    }
+    //}
+
+    //public class ActiveAbilityRepresentation : AbilityRepresentation
+    //{
+    //     public ActiveAbilityRepresentation(Text nameText, Text paCostText, Text descriptionText)
+    //    {
+    //        _nameText = nameText;
+    //        _paCostText = paCostText;
+    //        _descriptionText = descriptionText;
+    //    }
+
+    //    private Text _nameText;
+    //    private Text _paCostText;
+    //    private Text _descriptionText;
+
+
+    //    public void Display(ActiveAbility ability)
+    //    {
+    //        _nameText.text = "Name : " + ability.Name;
+    //        _descriptionText.text = "Description : " + ability.Description;
+    //        _paCostText.gameObject.SetActive(true);
+    //        _paCostText.text = "PA Cost : " + ability.PACost;
+    //    }
 
     //public void Hide()
     //{

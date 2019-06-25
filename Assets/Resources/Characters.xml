@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CharacterCollection>
+<Characters>
+  <Character id="0" name="Byakko, le tigre blanc de l'ouest">
+    <Description>Byakko est un tigre féroce, il traque et détruit ses cibles. Féroce et déterminé, c'est un maitre de la destruction qui ne craint pas les hordes d'ennemis.</Description>
+    <Spells>
+      <Spell id="1" name ="Férocité" description="Augmente les dégâts de %bonus% % pendant %duration% tour. Après cette durée, vous êtes fatigué pendant %contrecoup% tour "/>
+      <Spell id="2" name="Furie" description="Inflige %damages% dégâts à la cible. Si Furie a déjà été lancé ce tour ci, inflige %bonus% dommages supplémentaires."/>
+      <Spell id="3" name="Bond du chasseur" description="Bondit sur la cible, lui faisant perdre %PA% PA. vous êtes ensuite fatigué pendant %contrecoup% tour."/>
+      <Spell id="4" name="Terrain de chasse" description="Crée une zone de chasse pendant %duration% tours. Dans cette zone, si vous attaquez un ennemi, elle gagne un marqueur traquée. Vos attaques infligent %buff% damages supplémentaires pour chaques marqueurs traqués sur sa cible (Maximum %maximum%). Sortir de la zone de chasse retire tous les marqueurs traquée."/>
+      <Spell id="5" name="Rugissement" description="Tous ses ennemis proches de vous fuient, dépensant %PA% points d'actions en déplacement. "/>
+      <Spell id="6" name="Attaque finale" description="Tue la cible si elle a moins de %condition% % de vie."/>
+      <Spell id="7" name="Plaie sanglante" description="Votre prochaine attaque inflige %damages% de saignement répartis sur %duration% tours"/>
+      <Spell id="8" name="Prise du tigre" description="Ce tour ci lorseque vous vous déplacez, déplace la cible avec vous."/>
+    </Spells>
+	<Passif name="Roi de la jungle" description="Pour chaques ennemis proches, vous infligez %bonus% dégâts supplémentaires. Pour chaques alliés proches, vous infligez %malus% dégâts en moins."/>
+  </Character>
+  <Character id="1" name="Bucéphale, le cheval d'Alexandre le grand">
+    <Description>Bucéphale est un fier cheval, il charge ses ennemis sans crainte et les terasse. Inspirant et de vaillant, il est rapide et charge ses ennemis en pour les harceler.</Description>
+    <Spells>
+      <Spell id="1" name="Course effrénée" description="Vous vous dirigez jusqu'à l'endroit spécifié à chaque fin de tour de manière à y arriver au début de votre tour, s'arrête en cas de tacle ou si un obstacle vous bloque."/>
+      <Spell id="2" name="Charge de cavalerie" description="Vos alliés proches et vous même chargez dans la direction voulue, blessant tous les ennemis sur votre route à hauteur de %damages% dégâts plus %bonus% pour chacun de vos points de sabots. Vous résistez aux tacles pendant le déplacement."/>
+      <Spell id="3" name="Long saut" description="Dépense tous vos points de sabots pour effectuer un saut, à l'arrivée, infligez des dommages aux ennemis proches équivalents à %damages% pour chaque sabots dépensés."/>
+      <Spell id="4" name="Sabre sacré" description="Infligez %damages% par sabots à la cible."/>
+      <Spell id="5" name="Dernier salut" description="Vous gagnez %PA% points d'actions, vous devez les dépenser dans un déplacement."/>
+      <Spell id="6" name="Ruade" description="Inflige %damages% à la cible et la repousse de %distance% mètres."/>
+      <Spell id="7" name="Elan" description="Ce tour ci vous généréz %bonus% % de galop en plus"/>
+      <Spell id="8" name="Nuage de poussière" description="Lors de vos déplacements ce tour ci, laisse une trainée de poussière derrière vous. Se déplacer dans cette trainée coûte %bonus% % de déplacement en plus."/>
+    </Spells>
+    <Passif name="Galop" description="Vous généréz du galop en vous déplaçant, les dépense à chaque fin de tour, lors d'un tacle ou lors de vos attaques. Vous gagnez %agility% par sabots."/>
+  </Character>
+  <Character id="2" name="He-Bi, le serpent assassin">
+    <Description>He-Bi est un serpent sournois, il empoisonne ses ennemis et les tourmente. Rusé et efficace, il attaque les cibles isolées et les anhile au plus vite.</Description>
+    <Spells>
+      <Spell id="1" name="Prison hypnotique" description="Crée une zone hypnotique qui dure %duration% tours. Entrer dans cette zone ou en sortir fait perdre %PA% points d'actions. Cette zone ne vous affecte pas."/>
+      <Spell id="2" name="Croc empoisonné" description="Inflige %damages% à la cible. plus %dot% dommages de poisons par tour pendant %duration% tours."/>
+      <Spell id="3" name="Mue" description="Au début de votre prochain tour, vous regagnez des points de vie de manière à avoir autant de point de vie que maintenant."/>
+      <Spell id="4" name="Distortion" description="La cible et vous même vous rapprochez l'une de l'autre de %distance%, si vous vous touchez, lance croc empoisonné sur elle."/>
+      <Spell id="5" name="Effrayante illusion" description="Pousse tous les ennemis en zone de %distance% dans la direction opposée au centre."/>
+      <Spell id="6" name="Alerte" description="La prochaine personne qui vous attaque au corps à corps subit une contre-attaque croc empoisonné (avant que les dégâts de son attaque ne soient calculés)."/>
+      <Spell id="7" name="Attrition" description="Si la cible a plus de %condition% marqueur poisons, elle ne peux plus tacler ce tour ci et perds %mouvement% de vitesse. Double les effets de poisons présents sur la cible."/>
+      <Spell id="8" name="Constriction" description="La cilbe perds %PA% PA"/>
+    </Spells>
+     <Passif name="Charme" description="La première attaque qui vous cible coute %PA% points d'actions de plus."/>
+  </Character>
+  <Character id="3" name="Lautario, Le chien sage">
+    <Description>Lautario est un chien philosophe, il protège ses alliés et repousse les menaces. Fidèle et amical, il soigne ses alliés et terrorise ceux qui s'attaquent à son troupeau.</Description>
+    <Spells>
+      <Spell id="1" name="Garde" description="Crée un bouclier qui protège un allié ou vous même pendant %duration% tours, ce bouclier peut encaisser jusqu'à %shield% dégâts. Vous subissez %damages% dégâts quand la cible se fait attaquer."/>
+      <Spell id="2" name="Morsure sanglante" description="Blesse la cible et lui fait perdre %PA% points d'actions."/>
+      <Spell id="3" name="Bave curative" description="L'allié ciblé est soigné de %heal% % de ses points de vie maximum chaques tours pendant %duration% tours."/>
+      <Spell id="4" name="Braver les ténêbres" description="L'ennemi ciblé recule de %distance% et subit %damages% dégâts."/>
+      <Spell id="5" name="Présence encourageante" description="Soigne tous les alliés en zone autour de vous de %heal% % de leur points de vie maximum."/>
+      <Spell id="6" name="Aboiement féroce" description="La cible perds %PA% points d'action et subit %malus% % de dégâts subis en plus pendant %duration% tours."/>
+      <Spell id="7" name="Saut" description="Bondit au contact de la cible."/>
+      <Spell id="8" name="Cri de ralliement" description="Tous les alliés proches se déplacent vers vous de %distance%"/>
+    </Spells>
+    <Passif name="Chef de meute" description="Lorseque vous vous déplacez, pousse les alliés sur votre chemin."/>
+  </Character>
+<Character id="4" name="Karnimata, le roi des rats">
+    <Description>Karnimata un rat royal, entouré de sa garde royale il attaque ses ennemis avec tous ses compagnons. Intelligent et important, il envoie ses hordes harceler et dépecer ses opposants. </Description>
+    <Spells>
+      <Spell id="1" name="Morsure" description="Inflige %damages% dégâts à la cible et vous soigne,"/>
+      <Spell id="2" name="Charge royale" description="Vous vous déplacez dans la direction choisie avec un bonus de %bonus% % d'agilité. Inflige %damages% de dégâts aux ennemis sous forme de saignement sur %duration% tours."/>
+      <Spell id="3" name="Rongeur soldat" description="Invoque un soldat ayant %life% vies qui va se déplacer vers la cible à chaque fin de vos tours et l'attaquer une fois, lui faisant %damages% dégâts. Le soldat meurt après avoir attaqué."/>
+      <Spell id="4" name="Garde rat" description="Invoque un garde royal ayant %life% vies. Il a un tacle de %tackle% qui retire %PA% points d'actions et qui inflige %damages% dégâts aux ennemis qui tentent de passer."/>
+      <Spell id="5" name="Bouffon explosif" description="Invoque un bouffon explosif ayant %life% vies. Il se déplace vers l'endroit choisi. Une fois qu'il atteint cette zone ou qu'il touche un ennemi, il explose infligeant %damages% en zone."/>
+      <Spell id="6" name="Royale convocation" description="Déplace tous les rats de %distance% mètres dans votre direction "/>
+      <Spell id="7" name="Flot de rats" description="Repousse tous les rats en zone de %distance% mètres dans la direction opposée au roi. Inflige %damages% aux ennemis dans la zone plus %bonus% damages pour chaques rats poussé."/>
+      <Spell id="8" name="Essaim de peste" description="Pendant %duration% tours, inflige %damages% à tous les ennemis proches à chaque fin de tour et réduit tous les dommages subit de %protection% %"/>
+    </Spells>
+    <Passif name="Cannibalisme" description="Lorsequ'un de vos serviteur meurt, il laisse un reste de rat. Si vous vous déplacez sur un reste de rat, le consume et vous rends %heal% points de vie."/>
+  </Character>
+<Character id="5" name="King Zu Kong, le singe taquin">
+    <Description>King zu kong est un singe combattant, enchainant les techniques, il surprends ses ennemis avec un pannel d'attaques variés. Agile et polyvalent il place tous ses adversaires dans des situations inconfortable.</Description>
+    <Spells>
+      <Spell id="1" name="Paume de fatigue" description="Inflige %damages% dégâts et fait perdre %PA% points d'action à la cible. Combo : Fait perdre %bonus% points d'actions supplémentaires."/>
+      <Spell id="2" name="Shunpo" description="Saute vers l'ennemi, lui infligeant %damages% dégâts. Combo : inflige %bonus% dégâts supplémentaires et augmente la portée du dash de %distance% mètres."/>
+      <Spell id="3" name="Coup de tête" description="Inflige %damages% à la cible et la repousse de %distance% mètres. Combo : Repousse de %bonus% mètres supplémentaires."/>
+      <Spell id="4" name="Morsure" description="La cible subit %damages% de saignement répartis sur %duration% tours. Combo : La cible subit %bonus% dégâts supplémentaires en saignement et vous regagnez %PA% points d'actions."/>
+      <Spell id="5" name="Entrave" description="Inflige %damages% dégâts à la cible et lui fait perdre %agility% d'agilité et %mouvement% de vitesse. Combo : fait perdre %bonus% de vitesse supplémentaire à la cible et repousse tous les autres ennemis de %distance% mètres."/>
+      <Spell id="6" name="Mokujin" description="Invoque un clone de vous même qui tacle à la position ciblée."/>
+      <Spell id="7" name="Préparation" description="Votre prochaine attaque ne dépense pas vos points de combos."/>
+      <Spell id="8" name="Pose de fer" description="Pendant le prochain tour vous réduisez les dommages subis de %protection% et vous avez %PA% points d'actions en plus."/>
+    </Spells>
+    <Passif name="Tao" description="À chaques attaque lancée vous gagnez un point de tao. Quand vous avez trois points de tao et que vous lancez une attaque, déclenche ses effets de combo."/>
+  </Character>
+  <Character id="6" name="Gontrand, le coq annonciateur du jour">
+    <Description>Gontrand est un fier coq qui chante les louanges de ses alliés et qui lacère ses ennemis. Bipolaire et orgueilleux, il booste ses alliés et peut faire des dommages importants aux ennemis qu'il charge. </Description>
+    <Spells>
+      <Spell id="1" name="Chant d'espoir/Chant funèbre" description="De jour : Soigne Gontrand et ses alliés proches de %heal% vies, vous donne également un bouclier métallique qui absorbe %shield% damages. De Nuit : Les ennemis proches subissent %damages% % de leurs point de vie en dégâts. Gontrand subit %contrecoup% dégâts directs."/>
+      <Spell id="2" name="Energie/Fatigue" description="De jour : Donne %PA% points d'actions à la cible. De nuit : La cible perds %PA% points d'actions."/>
+      <Spell id="3" name="Attraction/Répulsion" description="De jour : Attire la cible de %mouvement%. De nuit : Repousse la cible de %mouvement%."/>
+      <Spell id="4" name="Nuit obscure/Jour radieux" description="De jour : C'est la nuit. De nuit : C'est le jour."/>
+      <Spell id="5" name="Champ d'acier/Explosion métallique" description="De jour : Vous gagnez un bouclier métallique qui vous protège de %shield% points de vie. De nuit : Vous perdez votre bouclier solaire, inflige %damages% pour chaque point d'armure ainsi perdus aux cibles proches."/>
+      <Spell id="6" name="Rayon solaire/Rayon lunaire" description="De jour : Soigne de %heal% en ligne. De nuit : Inflie %damages% dégâts en ligne."/>
+      <Spell id="7" name="Repli/Charge" description="De jour : Vous déplace de %distance% unités, vous gagnez un bouclier métallique qui vous protège de %shield% points de vie. De nuit : Vous déplace de %distance% unités, vous infligez %bonus% % de dégâts en plus."/>
+      <Spell id="8" name="Plumes d'acier/Aile tranchante" description="De jour : Votre bouclier métallique croit de %bonus% %. De nuit : Vous infligez %damages% à la cible pour chaques points de bouclier métallique que vous avez."/>
+    </Spells>
+    <Passif name="Fierté" description="Tous vos sorts sont %bonus% % plus efficace pour chaques alliés proche."/>
+  </Character>
+  <Character id="7" name="Draggar, la dragonne vengeresse">
+    <Description>Draggar est une dragonne qui brûle ses ennemis avant de les dévorer. Puissante et léthale, elle attaque ses ennemis à distance, puis les lacère au contact</Description>
+    <Spells>
+      <Spell id="1" name="Approche" description="Vous chargez la cible."/>
+      <Spell id="2" name="Danse de flamme" description="Enflamme tous les ennemis proches pendant %duration% tours. Ils subissent %dot% dégâts chaques tours."/>
+      <Spell id="3" name="Terre brulée" description="Ce tour ci, lorseque vous vous déplacez, laisse une glyphe derrière vous qui dure un tour et enflamme tous les ennemis qui passent dessus. Ils subissent %dot% dégâts chaques tours."/>
+      <Spell id="4" name="Projectile de flamme" description="Enflamme la cible pendant %duration% tours et lui inflige %damages% dégâts. Elle subit %dot% dégâts chaques tours."/>
+      <Spell id="5" name="Barrière de fumée" description="Pose une glyphe de fumée, la déclencher fait perdre %PA% points d'actions, on ne peux pas lancer de sort depuis l'intérieur de celle ci, ni à travers celle ci."/>
+      <Spell id="6" name="Vent divin" description="Inflige %damages% dégâts à tous les personnages."/>
+      <Spell id="7" name="Croc furieux" description="Inflige %damages% à une cible au contact, si elle est enflammée, elle subit %bonus% dégâts en plus"/>
+      <Spell id="8" name="Souffle de feu" description="Inflige %damages% dégâts en zone devant vous et repousse les ennemis de %distance%. Les ennemis touchés sont enflammés et subissent %dot% dégâts par tour pendant %duration% tours."/>
+    </Spells>
+    <Passif name="Dominance aérienne" description="Lorseque vous arrivez au contact d'une cible enflammée, elle subit %damages% dégâts et vous lui volez %agility% pendant un tour."/>
+  </Character>
+ <Character id="8" name="Hornus, le buffle protecteur">
+    <Description>Hornus est un buffle qui protège ses alliés. Calme mais puissant, il peut devenir enragé lorseque ses ennemis le provoquent.</Description>
+    <Spells>
+      <Spell id="1" name="Contre attaque/Attaque enragée" description="Pendant les %duration% prochains tours, si un ennemi attaque un allié à moins de %distance% de vous, vous chargez cet ennemi et lui faites %damages% dégâts. Si vous êtes enragé : vous chargez la cible et lui infligez %rage% de dégâts en repoussant légèrement tous les ennemis sur le chemin à la place."/>
+      <Spell id="2" name="Sauvetage/Interception" description="Vous sautez vers l'allié ciblé, repoussant légèrement tous les ennemis proches. Si vous êtes enragé : Vous sautez au contact de l'ennemi, repoussant tous les autres ennemis proches."/>
+      <Spell id="3" name="Rempart vivant" description="Vous gagnez un bouclier de %shield% vies pendant un tour."/>
+      <Spell id="4" name="Encornement" description="Inflige %damages% à la cible, si vous vous déplacez ce tour ci, déplace la cible avec vous."/>
+      <Spell id="5" name="Brise-genoux" description="Inflige %damages% à la cible et lui fait perdre %mouvement% de vitesse."/>
+      <Spell id="6" name="Balayage" description="Inflige %damages% à tous les ennemis proches."/>
+      <Spell id="7" name="Piétinement" description="Pendant %duration% inflige %damages% à tous les ennemis proches et leur fait perdre %agility% d'agilité à chaques fin de tour."/>
+      <Spell id="8" name="Tremble terre" description="Pose une glyphe sur vous qui dure %duration%. Les personnages sur cette glyphe se déplacent dans votre direction à chaques fin de tour."/>
+    </Spells>
+    <Passif name="Colère incontrolable" description="Lorseque Hornus passe à moins de %condition% de points de vie, il devient enragé."/>
+  </Character>
+  <Character id="9" name="Nostralapinus, le lapin voleur de temps">
+    <Description>Nostralapinus est un lapin qui utilise le temps pour attaquer ses ennemis depuis la quatrième dimension. Mobile et utile, il peut utiliser ses compétences pour se déplacer et infliger d'importants dégâts de zone.</Description>
+    <Spells>
+      <Spell id="1" name="Voyage temporel" description="La cible est téléportée à la position ou elle était au début de son tour passé, elle retrouve également ses points de vie et l'état dans lequel elle était au tour passé. Si un personnage se trouve à l'endroit ou la cible est téléportée, Il est téléporté à l'ancienne position de la cible."/>
+      <Spell id="2" name="Surcharge" description="Double votre flux temporel puis inflige %damages% à la cible. Vous perdez ensuite tout votre flux temporel."/>
+      <Spell id="3" name="Frappe dimentionelle" description="Inflige %damages% dégâts à la cible."/>
+      <Spell id="4" name="Faille chronologique" description="Vous téléporte dans une des quatres directions autour de Nostralapinus. Si vous arrivez sur un personnage, il est téléporté à votre ancienne position. Vous volez %PA% points d'actions à tous les personnages proches de vous."/>
+      <Spell id="5" name="Anomalie" description="Vous perdez tout votre flux temporel."/>
+      <Spell id="6" name="Champ de stase" description="Crée une glyphe sur Nostralapinus, être dans la glyphe fait perdre %PA% points d'actions."/>
+      <Spell id="7" name="Retour" description="Vous vous téléportez à l'emplacement ou vous vous trouviez au début de la partie. Si vous arrivez sur un personnage, il est téléporté à votre ancienne position."/>
+      <Spell id="8" name="Drain de temps" description="En zone autour de vous, les personnages perdent %PA%, vous gagnez un flux temporel pour chaque personnage ainsi touché."/>
+    </Spells>
+    <Passif name="Flux temporel" description="Nostralapinus génère du flux temporel avec ses attaques. Le flux temporel augmente les dégâts de ses sorts de %bonus% %, dimminue la portée de ses sorts de %malus% % et dimminue sa vitesse de %mouvement% %. Chaques tour ou Nostralapinus n'attaque pas, il perd un de flux temporel."/>
+  </Character>
+  <Character id="10" name="Gaia, la chèvre bâtisseuse">
+    <Description>Gaia est une chèvre qui construit des murs et les démolis. Stratège et tétue, elle coince ses ennemis et les vainc entre les murs de son labyrinthe.</Description>
+    <Spells>
+      <Spell id="1" name="Mur du labyrinthe" description="Un mur apparait à l'endroit indiqué. Il possède %life% points de vie."/>
+      <Spell id="2" name="Enprisonnement" description="Si un personnage est face à un mur, crée trois murs de manière à emprisoner cet ennemi."/>
+      <Spell id="3" name="Charge statique" description="Charge la cible, lui inflige %damages% dégâts plus %bonus% pour chaque charge d'énergie statique."/>
+      <Spell id="4" name="Clone illusoire" description="Invoque un clone à l'emplacement ciblé. Ce clone possède les mêmes caractèristiques que vous, mais est détruit à la moindre attaque. Ensuite, vous avez 50% de chance d'échanger de place avec votre clone. Passez votre tour."/>
+      <Spell id="5" name="Recul" description="Vous reculez de %distance% mètres puis invoque un mur en face de vous."/>
+      <Spell id="6" name="Coup de corne" description="Frappe la cible de %damages% et la fait reculer de %distance%."/>
+      <Spell id="7" name="Fontaine de soins" description="Invoque une glyphe qui rends %heal% points de vie en zone."/>
+      <Spell id="8" name="Corridor" description="Invoque deux mur parallèles en ligne."/>
+    </Spells>
+    <Passif name="Brise mur" description="Vous pouvez traverser les obstacles, quand vous le faites, les détruits et vous donne une charge d'énergie cinétique."/>
+  </Character>
+  <Character id="11" name="Bartholomé, le cochon béhémoth ">
+    <Description>Bartholomé est un cochon gourmand, il tiens à distance les ennemis et résiste à leurs assauts. Raffiné et fort il repousse les hordes d'ennemis et bloque l'accès à ses alliés..</Description>
+    <Spells>
+      <Spell id="1" name="Repousser" description="Repousse l'ennemi ciblé de %distance% et lui inflige %damages% dégâts."/>
+      <Spell id="2" name="Souillure" description="La cible inflige %malus% % dégâts en moins et se déplace de %mouvement% en moins pendant %duration% tours."/>
+      <Spell id="3" name="Frappe porcine" description="Inflige %damages% de dégâts plus un bonus de %bonus% dégâts pour chacun de vos points de vie maximums à tous les personnages au contact et leur fait perdre %malus% % d'agilité."/>
+      <Spell id="4" name="Roulade" description="Vous déplace d'une courte distance (vous ne subissez pas les tacles). Vous repoussez tous les personnages sur votre route de %distance% et leur infligez %damages% de dégâts plus %bonus% pour chacun de vos points de vie maximums."/>
+      <Spell id="5" name="Flair" description="Vous et la cible vous rapprochez l'un de l'autre de %distance%"/>
+      <Spell id="6" name="Instinct protecteur" description="Quand la cible devrait subir des dégâts pendant les %duration% prochains tours, les redirige sur vous."/>
+      <Spell id="7" name="Croissance incontrolable" description="Vous doublez vos points de vie maximums pendant un tour."/>
+      <Spell id="8" name="Festin" description="Vous soigne de %heal% et vous donne %life% points de vie maximums."/>
+    </Spells>
+    <Passif name="Gourmand" description="Bartholomé grossit avec ses points de vie maximums."/>
+  </Character>
+  <Character id="12" name="Jack, le chat parieur">
+    <Description>Jack est un chat joueur, il peut vaincre ses ennemis ou enchainer les catastrophes. Passionné et malin, il recherche la chance et attaque de manière imprévisible.</Description>
+    <Spells>
+      <Spell id="1" name="Maneki-Neko" description="Invoque un Maneki-Neko, il a %life% points de vie et vous avez un bonus de %luck% de chance pendant un tour, lorseque vous passez près de lui si il est activé. Chaques tours les Maneki-Nekos ont %probability% de chance de se désactiver ou %probability% de chance de se réactiver"/>
+      <Spell id="2" name="Saut approximatif" description="Vous sautez à la position indiquée, vous avez %probability% de chance de tomber à une distance maximale %distance% de votre destination."/>
+      <Spell id="3" name="Coup de poker" description="Ce tour ci quand vous attaquez vous avez %luck% de chance de doubler les dommages que vous faites, sinon vous soignez votre adversaire des dégâts que vous auriez du lui infliger."/>
+      <Spell id="4" name="Pari" description="Vous infligez %damages% de dégâts à la cible multiplié par un nombre entre %minimum% et %maximum%."/>
+      <Spell id="5" name="Roulette" description="Vous perdez entre %minimum% et %maximum% points d'actions. Si vous devriez en perdre plus qu'il ne vous en reste, vous subissez %contrecoup% dégâts et l'attaque ne se lance pas. La cible perds %damages% points de vie. Vous passez votre tour."/>
+      <Spell id="6" name="Instinct" description="Vous avez %probability% de chance gagner %PA% points d'actions."/>
+      <Spell id="7" name="Jackpot" description="Dans une zone, inflige des dégâts compris entre %minimum% et %maximum% aux personnages présents."/>
+      <Spell id="8" name="Flipper" description="Lance une boule dans la direction ciblée, elle rebondit %bonus% fois. Chaque personnage touché subit %damages% dégâts."/>
+    </Spells>
+    <Passif name="Pioche" description="Chaques tour vous avez un évènement aléatoire qui se produit : vous gagnez %PA%, vous perdez %damages% vie, vous gagnez %heal% vies."/>
+  </Character>
+</Characters>
+</CharacterCollection>

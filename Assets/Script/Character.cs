@@ -11,7 +11,6 @@ public enum TeamEnum
 
 public abstract class Character : MonoBehaviour
 {
-
     #region Settings
     public int indexPlayer;
     public float currentHP;
